@@ -1,0 +1,25 @@
+# this compiled with clang but not gcc for some reason
+
+clang -lglfw -lGL test.c
+
+# gcc gave me errors
+➜  glfw-messing gcc -lglfw test.c        
+/usr/bin/ld: /tmp/ccfItfDs.o: in function `main':
+test.c:(.text+0xd): undefined reference to `glfwInit'
+/usr/bin/ld: test.c:(.text+0x3c): undefined reference to `glfwCreateWindow'
+/usr/bin/ld: test.c:(.text+0x4c): undefined reference to `glfwTerminate'
+/usr/bin/ld: test.c:(.text+0x5f): undefined reference to `glfwMakeContextCurrent'
+/usr/bin/ld: test.c:(.text+0x6b): undefined reference to `glClear'
+/usr/bin/ld: test.c:(.text+0x77): undefined reference to `glfwSwapBuffers'
+/usr/bin/ld: test.c:(.text+0x7c): undefined reference to `glfwPollEvents'
+/usr/bin/ld: test.c:(.text+0x88): undefined reference to `glfwWindowShouldClose'
+/usr/bin/ld: test.c:(.text+0x91): undefined reference to `glfwTerminate'
+collect2: error: ld returned 1 exit status
+
+building the other sample requires glad downloaded from the web service to create the right configuration ... I don't fully understand why it's not a library that you can install with apt-get ... 
+
+https://gen.glad.sh/generated/tmpkci53b3wglad/
+
+https://learnopengl.com/Getting-started/Creating-a-window
+
+
